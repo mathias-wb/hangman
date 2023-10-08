@@ -42,7 +42,13 @@ class Hangman:
 		self.previous_guesses: list = []
 	
 	def __str__(self):
-		return f"\nWord: {''.join(self.word_guessed)} | {"❤ "*self.lives}{"✴ "*(self.max_lives - self.lives)}\nPrevious Guesses: {''.join(sorted(self.previous_guesses))}"
+		"""
+		String method.
+
+		Returns:
+			Information on letters that appear in the word, lives remaining, and previous guessed letters.
+		"""
+		return f"\nWord: {''.join(self.word_guessed)} | {'❤ '*self.lives}{'✴ '*(self.max_lives - self.lives)}\nPrevious Guesses: {''.join(sorted(self.previous_guesses))}"
 
 	def check_guess(self, guess):
 		"""
@@ -85,6 +91,12 @@ class Hangman:
 
 
 def game_loop(**kwargs):
+	"""
+	Main loop of the game.
+
+	Parameters:
+		kwargs (dict): Parameters to be passed to the game's constructor method.
+	"""
 	lives = 5
 	min_length = 5
 	max_length = 8
@@ -117,7 +129,7 @@ if __name__ == "__main__":
 		again = input("Play again? (Y/N): ")
 		if again.upper() in ["N", "NO"]:
 			break
-		elif again.upper() in ["N", "NO"]:
+		elif again.upper() in ["Y", "YES"]:
 			game_loop()
 		else:
 			print("Invalid input! Try again.")
