@@ -20,4 +20,3 @@ def get_words(min_length, max_length):
 
 if __name__ == "__main__":
 	print(get_words(5,8))
-	pass

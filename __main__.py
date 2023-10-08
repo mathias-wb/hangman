@@ -84,8 +84,6 @@ class Hangman:
 				break
 
 
-
-
 def game_loop(**kwargs):
 	lives = 5
 	min_length = 5
@@ -113,6 +111,14 @@ def game_loop(**kwargs):
 	print(f"The word was: {game.word.upper()}")
 
 
-
 if __name__ == "__main__":
 	game_loop()
+	while True:
+		again = input("Play again? (Y/N): ")
+		if again.upper() in ["N", "NO"]:
+			break
+		elif again.upper() in ["N", "NO"]:
+			game_loop()
+		else:
+			print("Invalid input! Try again.")
+		
