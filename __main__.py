@@ -126,7 +126,7 @@ def game_loop(**kwargs):
 if __name__ == "__main__":
 	game_loop()
 	while True:
-		again = input("Play again? (Y/N): ")
+		again = input("\nPlay again? (Y/N): ")
 		if again.upper() in ["N", "NO"]:
 			break
 		elif again.upper() in ["Y", "YES"]:
