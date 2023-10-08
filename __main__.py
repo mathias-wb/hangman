@@ -14,7 +14,10 @@ class Hangman:
 			The word chosen at random by the program that the user must guess.
 
 		lives (int):
-			The number of incorrect attempts the user is allowed before they lose the game (default = 5)
+			The number of incorrect attempts the user is allowed left before they lose the game (default = 5).
+
+		max_lives (int):
+			The maximum number of incorrect attempts the user is allowed before they lose the game (same as lives at initialisation).
 
 		word_guessed (list):
 			A list representing the location of the previously correct guesses in the word and the locations of the letters
@@ -32,7 +35,14 @@ class Hangman:
 		Constructor method.
 
 		Parameters:
-			lives (int): The number of incorrect attempts the user is allowed before they lose the game (default = 5)
+			lives (int): 
+				The number of incorrect attempts the user is allowed before they lose the game (default = 5)
+
+			min_length (int):
+				The minimum length of the word that should be chosen in character count.
+
+			max_length (int):
+				The maximum length of the word that should be chosen in character count.
 		"""
 		self.word: str = choice(get_words(min_length, max_length))
 		self.lives: int = lives
@@ -133,4 +143,4 @@ if __name__ == "__main__":
 			game_loop()
 		else:
 			print("Invalid input! Try again.")
-		
+
